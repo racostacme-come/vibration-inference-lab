@@ -1,0 +1,19 @@
+{
+  "pages": 4,
+  "engine": "tectonic.exe",
+  "sha256": {
+    "src/quantflex/core.py": "0e0084ebf84384d24985372e3e71f46361ee8f9f6dc71c750c1102463abb3005",
+    "src/quantflex/study.py": "bb18bc6a4edc251c6c4ceae4878e7f9a3375c616b65cf999006720c946d5496f",
+    "pyproject.toml": "706decd47b48c32556545e18cc585928c5220220e18a336e675c5471c38e54b3",
+    "scripts/check_results.py": "67925c7b8747234025a9cca5c770edc17ed952ff5df276e1b2029a154c429206",
+    "tests/test_core.py": "6ac9e2afd2223c45f01624edac936a987ea19f1562c3afd39ab9bca100e178c4",
+    "paper/paper.tex": "206574ec818fe684344e0d3de72f7277485a99bff8b0d14d433c1a2715cd11b5",
+    "results/numbers.tex": "5dd30204f5bfc577b421b7f0819b7f4361112b68bac1d234f4ca38a963125d73",
+    "results/table.tex": "1d26dd955852823daf43e341c3d0af4aa787db12b593e9d1d4a76c3e92e414cd",
+    "results/study.png": "90cb5fc866374b2e37469113a8b376c01d16ce369e5ed21d2362bbd621cdc576",
+    "results/metrics.json": "52d92b8b429fbd7c14ca57fa97bd7c3a0eb6308cc47df7d27fca6fba4c0004f0",
+    "results/history.csv": "8e146c9a99d88783091ccf9241055f6d7889e19110faea8ca22d74ea2924b2da",
+    "results/study.csv": "e10c40eacfa2d30a5e2f17459b25d211937dcd2352cda4e234eb0c616d22f016",
+    "paper/paper.pdf": "f516959f5d7d23c12ae6873df25e5fd2e1eb600005ba450fe1daee476375a68b"
+  }
+}

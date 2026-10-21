@@ -1,0 +1,51 @@
+name: Build and validate
+on: [push, pull_request, workflow_dispatch]
+permissions:
+  contents: read
+jobs:
+  numerical:
+    strategy:
+      matrix:
+        include:
+          - os: ubuntu-24.04
+            python: '3.11'
+          - os: windows-latest
+            python: '3.14'
+    runs-on: ${{ matrix.os }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python }}
+      - run: python -m pip install -e ".[dev]"
+      - run: python -m ruff check .
+      - run: python -m ruff format --check .
+      - run: python -m pytest -q
+      - run: python scripts/check_samples.py
+      - run: python scripts/check_manifest.py
+      - run: python -m build
+      - run: python -m pip uninstall -y loadcoherent
+      - run: python -m pip install dist/loadcoherent-0.1.0-py3-none-any.whl
+      - run: python -c "import loadcoherent; assert 'site-packages' in loadcoherent.__file__, loadcoherent.__file__"
+      - run: python -m pytest -q
+      - run: python scripts/check_samples.py
+  manuscript:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: python -m pip install -e ".[dev]"
+      - run: python scripts/check_manifest.py
+      - run: sudo apt-get update && sudo apt-get install -y texlive-latex-base texlive-latex-extra texlive-fonts-recommended poppler-utils
+      - run: python paper/build.py --engine pdflatex
+      - run: pdftoppm -r 110 -png paper/paper.pdf paper/build/page
+      - uses: actions/upload-artifact@v4
+        with:
+          name: manuscript-review
+          path: |
+            paper/paper.pdf
+            paper/validation.json
+            paper/build/page-*.png
+            paper/build/paper.log

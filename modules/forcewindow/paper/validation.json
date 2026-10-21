@@ -1,0 +1,14 @@
+{
+  "pages": 4,
+  "engine": "tectonic.exe",
+  "checks": "compiled; no undefined references/citations or overfull boxes",
+  "sha256": {
+    "paper/paper.tex": "a44270c4a44d1bab253a38a642a6b771692eff6ac8b7ef6e1fe23dfbda1ff918",
+    "paper/paper.pdf": "02ee868839e393e7d0a81ad6e3818c8586267e5814ace56435af5ea273e7f7af",
+    "examples/results/metrics.json": "45be49b9545d6620d10ad80b83beba5fd5f16f0304cbef5b0a87ded9ccff0ab7",
+    "examples/results/window-study.pdf": "c03310014b4900ad50391855e162f822e194175f3e452a2bda4ac99e1a6f6eda",
+    "src/forcewindow/study.py": "75258931b159ce4921282f166df1749ae30c6e73f0afa530832075b25b720240",
+    "src/forcewindow/model.py": "a951033c8bd07dca7ce5cd25e09dab8b390a49c900a94f8b5200d9002cc82fed",
+    "cpp/state.hpp": "fd917e0d829a178ecc00ab5b11a7f264fff4b4a00598164dd85e4fd34d0eda6e"
+  }
+}

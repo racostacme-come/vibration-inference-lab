@@ -1,0 +1,7 @@
+include LICENSE
+recursive-include tests *.py
+recursive-include scripts *.py
+recursive-include paper *.tex *.py *.pdf *.json
+recursive-include examples *.json *.csv *.png *.pdf
+recursive-include docs *.md
+prune paper/build

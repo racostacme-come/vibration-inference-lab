@@ -1,0 +1,68 @@
+name: Build and validate
+on: [push, pull_request, workflow_dispatch]
+permissions:
+  contents: read
+jobs:
+  software:
+    strategy:
+      matrix:
+        include:
+          - os: ubuntu-24.04
+            python: '3.11'
+          - os: windows-latest
+            python: '3.14'
+    runs-on: ${{ matrix.os }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python }}
+      - run: python -m pip install ".[dev]"
+      - run: ruff check .
+      - run: ruff format --check .
+      - run: clang-format --dry-run --Werror cpp/bindings.cpp cpp/energy.hpp cpp/test_energy.cpp
+      - run: python -m pytest -q
+      - run: python scripts/check_results.py
+      - run: python scripts/build_paper.py --verify
+      - name: Configure native tests
+        shell: bash
+        run: cmake -S . -B build/native -Dpybind11_DIR="$(python -c 'import pybind11; print(pybind11.get_cmake_dir())')"
+      - run: cmake --build build/native --config Release
+      - run: ctest --test-dir build/native -C Release --output-on-failure
+      - name: Native address and undefined-behavior sanitizers
+        if: runner.os == 'Linux'
+        run: |
+          g++ -std=c++17 -Wall -Wextra -Werror -fsanitize=address,undefined -g cpp/test_energy.cpp -o build/test-sanitized
+          ./build/test-sanitized
+      - run: python -m build
+      - name: Install and test wheel
+        shell: bash
+        run: |
+          python -m pip install --force-reinstall --no-deps dist/*.whl
+          python -c "import jointguard; assert 'site-packages' in jointguard.__file__"
+          python -m pytest -q
+          python examples/quickstart.py
+          python scripts/check_results.py
+      - uses: actions/upload-artifact@v4
+        with:
+          name: packages-${{ matrix.os }}
+          path: dist/*
+  manuscript:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: python -m pip install 'pypdf>=5,<7'
+      - run: sudo apt-get update && sudo apt-get install -y texlive-latex-extra texlive-science texlive-fonts-recommended lmodern poppler-utils
+      - run: python scripts/build_paper.py
+      - run: python scripts/build_paper.py --verify
+      - run: mkdir -p paper/build && pdftoppm -scale-to 1400 -png paper/paper.pdf paper/build/page
+      - uses: actions/upload-artifact@v4
+        with:
+          name: manuscript-review
+          path: |
+            paper/paper.pdf
+            paper/build-report.json
+            paper/build/page-*.png

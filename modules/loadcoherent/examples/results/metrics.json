@@ -1,0 +1,353 @@
+{
+  "seed": 20261008,
+  "nodes": [
+    "Plant",
+    "North",
+    "South",
+    "N1",
+    "N2",
+    "S1",
+    "S2"
+  ],
+  "covariance_kw2": [
+    [
+      58.0,
+      14.0,
+      21.0,
+      7.0,
+      10.5,
+      7.0,
+      14.0
+    ],
+    [
+      14.0,
+      24.0,
+      6.0,
+      10.0,
+      -1.0,
+      2.0,
+      4.0
+    ],
+    [
+      21.0,
+      6.0,
+      24.25,
+      3.0,
+      4.5,
+      7.5,
+      3.0
+    ],
+    [
+      7.0,
+      10.0,
+      3.0,
+      6.0,
+      -0.5,
+      1.0,
+      2.0
+    ],
+    [
+      10.5,
+      -1.0,
+      4.5,
+      -0.5,
+      4.6899999999999995,
+      1.5,
+      3.0
+    ],
+    [
+      7.0,
+      2.0,
+      7.5,
+      1.0,
+      1.5,
+      4.46,
+      0.5
+    ],
+    [
+      14.0,
+      4.0,
+      3.0,
+      2.0,
+      3.0,
+      0.5,
+      7.25
+    ]
+  ],
+  "summing_matrix": [
+    [
+      1.0,
+      1.0,
+      1.0,
+      1.0
+    ],
+    [
+      1.0,
+      1.0,
+      0.0,
+      0.0
+    ],
+    [
+      0.0,
+      0.0,
+      1.0,
+      1.0
+    ],
+    [
+      1.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    [
+      0.0,
+      1.0,
+      0.0,
+      0.0
+    ],
+    [
+      0.0,
+      0.0,
+      1.0,
+      0.0
+    ],
+    [
+      0.0,
+      0.0,
+      0.0,
+      1.0
+    ]
+  ],
+  "replicates": 80,
+  "test_samples": 60000,
+  "fixed": {
+    "base": {
+      "mse_per_node": [
+        58.0,
+        24.0,
+        24.25,
+        6.0,
+        4.6899999999999995,
+        4.46,
+        7.25
+      ],
+      "total_mse": 128.64999999999998,
+      "risk_ratio": 1.0,
+      "monte_carlo_mse": 128.79953944350817,
+      "monte_carlo_standard_error": 0.4925279247582483,
+      "monte_carlo_z": 0.3036161727918044,
+      "constraint_operator_max": 1.0,
+      "preservation_max": 0.0
+    },
+    "bottom_up": {
+      "mse_per_node": [
+        37.4,
+        9.69,
+        12.71,
+        6.0,
+        4.6899999999999995,
+        4.46,
+        7.25
+      ],
+      "total_mse": 82.19999999999999,
+      "risk_ratio": 0.6389428682471823,
+      "monte_carlo_mse": 81.86884376420024,
+      "monte_carlo_standard_error": 0.38541888900260196,
+      "monte_carlo_z": -0.8592112251081638,
+      "constraint_operator_max": 0.0,
+      "preservation_max": 0.0
+    },
+    "ols": {
+      "mse_per_node": [
+        45.028571428571446,
+        14.25190476190476,
+        18.062380952380956,
+        8.974761904761898,
+        3.9961904761904785,
+        7.241904761904762,
+        7.144285714285719
+      ],
+      "total_mse": 104.7,
+      "risk_ratio": 0.8138359891177616,
+      "monte_carlo_mse": 104.70811923780494,
+      "monte_carlo_standard_error": 0.4702456916083234,
+      "monte_carlo_z": 0.017265948311327432,
+      "constraint_operator_max": 4.163336342344337e-17,
+      "preservation_max": 4.440892098500626e-16
+    },
+    "oracle": {
+      "mse_per_node": [
+        36.70510928316405,
+        9.656113871987058,
+        12.20817386184832,
+        4.639086005296904,
+        2.8678507368050146,
+        3.999329423311042,
+        5.587534639967414
+      ],
+      "total_mse": 75.6631978223798,
+      "risk_ratio": 0.5881321245424004,
+      "monte_carlo_mse": 75.28280393037791,
+      "monte_carlo_standard_error": 0.3753169090205843,
+      "monte_carlo_z": -1.0135271895810802,
+      "constraint_operator_max": 1.1102230246251565e-16,
+      "preservation_max": 4.440892098500626e-16
+    },
+    "wrong_weights": {
+      "mse_per_node": [
+        57.77137840697304,
+        19.95579810081658,
+        26.90478528845741,
+        10.165586622484375,
+        5.6573124279241,
+        9.282077309023299,
+        9.525315335205399
+      ],
+      "total_mse": 139.26225349088418,
+      "risk_ratio": 1.0824893392217971,
+      "monte_carlo_mse": 139.46496064208537,
+      "monte_carlo_standard_error": 0.6161918823400188,
+      "monte_carlo_z": 0.32896757813719557,
+      "constraint_operator_max": 5.551115123125783e-17,
+      "preservation_max": 6.106226635438361e-16
+    }
+  },
+  "calibration": [
+    {
+      "samples": 10,
+      "method": "sample",
+      "mean_risk_ratio": 0.9429045831047425,
+      "mean_standard_error": 0.03862422812128923,
+      "median_risk_ratio": 0.8438648708378194,
+      "q10": 0.698141996312207,
+      "q90": 1.2816412342441612,
+      "fraction_worse_than_base": 0.25
+    },
+    {
+      "samples": 10,
+      "method": "shrink_half",
+      "mean_risk_ratio": 0.6661333505852834,
+      "mean_standard_error": 0.003963316826459365,
+      "median_risk_ratio": 0.6586185224808815,
+      "q10": 0.6299691728289667,
+      "q90": 0.7166628537213044,
+      "fraction_worse_than_base": 0.0
+    },
+    {
+      "samples": 10,
+      "method": "diagonal",
+      "mean_risk_ratio": 0.6782837215727733,
+      "mean_standard_error": 0.002180918504266872,
+      "median_risk_ratio": 0.6732007050976418,
+      "q10": 0.660894389161982,
+      "q90": 0.6976216654024073,
+      "fraction_worse_than_base": 0.0
+    },
+    {
+      "samples": 20,
+      "method": "sample",
+      "mean_risk_ratio": 0.6848362637504157,
+      "mean_standard_error": 0.008259759415511719,
+      "median_risk_ratio": 0.6679175293457326,
+      "q10": 0.6171716135004001,
+      "q90": 0.7634137220620765,
+      "fraction_worse_than_base": 0.0125
+    },
+    {
+      "samples": 20,
+      "method": "shrink_half",
+      "mean_risk_ratio": 0.6427417373317525,
+      "mean_standard_error": 0.0017479221114359757,
+      "median_risk_ratio": 0.6391552645679723,
+      "q10": 0.6243526246193564,
+      "q90": 0.6660615403851455,
+      "fraction_worse_than_base": 0.0
+    },
+    {
+      "samples": 20,
+      "method": "diagonal",
+      "mean_risk_ratio": 0.6723930186713772,
+      "mean_standard_error": 0.0010925247223469879,
+      "median_risk_ratio": 0.6708648097142749,
+      "q10": 0.660979771102958,
+      "q90": 0.6853764136242027,
+      "fraction_worse_than_base": 0.0
+    },
+    {
+      "samples": 50,
+      "method": "sample",
+      "mean_risk_ratio": 0.6263032015298065,
+      "mean_standard_error": 0.00267598301282625,
+      "median_risk_ratio": 0.620841566052958,
+      "q10": 0.6020799376247647,
+      "q90": 0.6550538471046349,
+      "fraction_worse_than_base": 0.0
+    },
+    {
+      "samples": 50,
+      "method": "shrink_half",
+      "mean_risk_ratio": 0.6364769157115949,
+      "mean_standard_error": 0.001033662192054751,
+      "median_risk_ratio": 0.6368182350434712,
+      "q10": 0.6250393446233472,
+      "q90": 0.6496183019590158,
+      "fraction_worse_than_base": 0.0
+    },
+    {
+      "samples": 50,
+      "method": "diagonal",
+      "mean_risk_ratio": 0.6695025241790277,
+      "mean_standard_error": 0.0006894918145503768,
+      "median_risk_ratio": 0.6698523729929953,
+      "q10": 0.6616288524380374,
+      "q90": 0.6760350921306308,
+      "fraction_worse_than_base": 0.0
+    },
+    {
+      "samples": 200,
+      "method": "sample",
+      "mean_risk_ratio": 0.5968209223742775,
+      "mean_standard_error": 0.0006318403980872515,
+      "median_risk_ratio": 0.5954192190974608,
+      "q10": 0.5905932789274588,
+      "q90": 0.6050701307913723,
+      "fraction_worse_than_base": 0.0
+    },
+    {
+      "samples": 200,
+      "method": "shrink_half",
+      "mean_risk_ratio": 0.6305471696901084,
+      "mean_standard_error": 0.00045124664190903903,
+      "median_risk_ratio": 0.629950942489514,
+      "q10": 0.6259319920895499,
+      "q90": 0.6368210740749266,
+      "fraction_worse_than_base": 0.0
+    },
+    {
+      "samples": 200,
+      "method": "diagonal",
+      "mean_risk_ratio": 0.6673019031490531,
+      "mean_standard_error": 0.00033517365992567365,
+      "median_risk_ratio": 0.6670458474728318,
+      "q10": 0.6634595279507678,
+      "q90": 0.6711222443904181,
+      "fraction_worse_than_base": 0.0
+    }
+  ],
+  "coherent_bias_kw": [
+    8.0,
+    4.0,
+    4.0,
+    2.0,
+    2.0,
+    2.0,
+    2.0
+  ],
+  "coherent_bias_preservation_max": 8.881784197001252e-16,
+  "oracle_biased_total_mse": 187.66319782237986,
+  "oracle_bias_penalty": 112.0,
+  "kkt_max_error": 1.4210854715202004e-14,
+  "idempotence_max": 4.440892098500626e-16,
+  "path_base_max_imbalance_kw": 11.878479102829882,
+  "path_reconciled_max_imbalance_kw": 1.7763568394002505e-14
+}

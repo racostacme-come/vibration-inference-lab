@@ -1,0 +1,95 @@
+{
+  "parameters": {
+    "loads": 120,
+    "dt_s": 0.01,
+    "noise_std_m": 2e-05,
+    "lambda_m_per_N": 0.0002,
+    "seed": 20261013,
+    "mass_kg": 1,
+    "damping_Ns_per_m": 0.8,
+    "stiffness_N_per_m": 100
+  },
+  "windows": [
+    {
+      "tail": 0,
+      "observations": 120,
+      "terminal_sensitivity_m_per_N": 0.0,
+      "expected_rmse_N": 0.04264430780407406,
+      "expected_last10_rmse_N": 0.11600903277953298,
+      "realized_rmse_N": 0.04369498406030686,
+      "estimated_last_N": 0.0,
+      "last_resolution_diagonal": 0.0,
+      "smallest_singular_value": 2.8172299677671302e-18,
+      "stop": 2,
+      "iterations": 83,
+      "residual_l2_m": 0.0002460623365063758,
+      "normal_residual_l2": 6.536061750349665e-16
+    },
+    {
+      "tail": 1,
+      "observations": 121,
+      "terminal_sensitivity_m_per_N": 4.9825413146534614e-05,
+      "expected_rmse_N": 0.04556276384064843,
+      "expected_last10_rmse_N": 0.1288451119792335,
+      "realized_rmse_N": 0.04661161508562848,
+      "estimated_last_N": 0.0645282391988802,
+      "last_resolution_diagonal": 0.023484202000575324,
+      "smallest_singular_value": 1.864727345296755e-07,
+      "stop": 2,
+      "iterations": 83,
+      "residual_l2_m": 0.00023241726856364838,
+      "normal_residual_l2": 1.0468959222065785e-15
+    },
+    {
+      "tail": 20,
+      "observations": 140,
+      "terminal_sensitivity_m_per_N": 0.0032714693834071766,
+      "expected_rmse_N": 0.03942672686700319,
+      "expected_last10_rmse_N": 0.10198083442085412,
+      "realized_rmse_N": 0.04064566698602138,
+      "estimated_last_N": -0.08923835319531376,
+      "last_resolution_diagonal": 0.5736024938355423,
+      "smallest_singular_value": 3.3216968700861175e-07,
+      "stop": 2,
+      "iterations": 92,
+      "residual_l2_m": 0.00023101843058321618,
+      "normal_residual_l2": 1.5103199219387218e-15
+    },
+    {
+      "tail": 80,
+      "observations": 200,
+      "terminal_sensitivity_m_per_N": 0.005457108915835802,
+      "expected_rmse_N": 0.03935985141987566,
+      "expected_last10_rmse_N": 0.10176540525116444,
+      "realized_rmse_N": 0.04020403956493078,
+      "estimated_last_N": -0.16191844064257133,
+      "last_resolution_diagonal": 0.6145550692940523,
+      "smallest_singular_value": 3.322553143517958e-07,
+      "stop": 2,
+      "iterations": 95,
+      "residual_l2_m": 0.000283620073148685,
+      "normal_residual_l2": 7.613099112508319e-16
+    }
+  ],
+  "continuum": [
+    {
+      "dt_s": 0.04,
+      "max_displacement_error_m": 0.0001523305840905008
+    },
+    {
+      "dt_s": 0.02,
+      "max_displacement_error_m": 3.8139110857950825e-05
+    },
+    {
+      "dt_s": 0.01,
+      "max_displacement_error_m": 9.538300661582344e-06
+    },
+    {
+      "dt_s": 0.005,
+      "max_displacement_error_m": 2.3868967012896647e-06
+    }
+  ],
+  "max_lsqr_svd_difference_N": 3.899872091928103e-09,
+  "constant_load_max_error_m": 1.474514954580286e-17,
+  "true_last_force_N": -0.13692933962774745
+}

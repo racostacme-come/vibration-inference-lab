@@ -1,0 +1,7 @@
+include LICENSE README.md pyproject.toml requirements-reproduced.txt
+recursive-include tests *.py
+recursive-include scripts *.py
+recursive-include docs *.md
+recursive-include examples/results *.csv *.json *.png
+include paper/paper.tex paper/paper.pdf paper/numbers.tex paper/build.py paper/validation.json paper/README.md
+include .github/workflows/validate.yml

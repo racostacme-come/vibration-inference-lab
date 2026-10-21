@@ -1,0 +1,11 @@
+.venv/
+.archives/
+__pycache__/
+.pytest_cache/
+build/
+dist/
+*.egg-info/
+*.aux
+*.log
+*.out
+paper/renders/

@@ -1,0 +1,70 @@
+{
+  "setup": {
+    "omega": 6.283185307179586,
+    "zeta": 0.08,
+    "q": 0.6,
+    "measurement_variance": 0.0004,
+    "seed_trace": 2718,
+    "seed_mc_start": 10000,
+    "trials": 256,
+    "samples": 129,
+    "dt": 0.0625,
+    "gap_start": 3,
+    "gap_end": 5,
+    "evaluation_time": 4.0
+  },
+  "verification": {
+    "batch_mean_max_abs": 5.551115123125783e-16,
+    "batch_covariance_max_abs": 1.249000902703301e-16,
+    "batch_nll_abs": 8.881784197001252e-16,
+    "quadrature_covariance_max_abs": 1.3877787807814457e-17,
+    "stationary_covariance_max_abs": 2.220446049250313e-16
+  },
+  "gap_center": {
+    "filter_sd": 0.07077177329733311,
+    "smooth_sd": 0.0611095036692059,
+    "variance_reduction_fraction": 0.25441466462795514
+  },
+  "monte_carlo": {
+    "filter_mean_nees": 1.9485653896269415,
+    "smooth_mean_nees": 1.9123125063089783,
+    "filter_displacement_coverage": 0.96875,
+    "smooth_displacement_coverage": 0.9765625,
+    "mean_nees_95_interval": [
+      1.7624859530830526,
+      2.252309149322698
+    ]
+  },
+  "euler_refinement": [
+    {
+      "steps": 16,
+      "dt": 0.0625,
+      "transition_error_fro": 2.578613304903524,
+      "covariance_error_fro": 0.40796727103927266
+    },
+    {
+      "steps": 32,
+      "dt": 0.03125,
+      "transition_error_fro": 0.7319497598736566,
+      "covariance_error_fro": 0.14897902024870582
+    },
+    {
+      "steps": 64,
+      "dt": 0.015625,
+      "transition_error_fro": 0.33249022932849676,
+      "covariance_error_fro": 0.062095028300265934
+    },
+    {
+      "steps": 128,
+      "dt": 0.0078125,
+      "transition_error_fro": 0.16029084875028643,
+      "covariance_error_fro": 0.028335970493487562
+    },
+    {
+      "steps": 256,
+      "dt": 0.00390625,
+      "transition_error_fro": 0.07866649037527831,
+      "covariance_error_fro": 0.013541331981751411
+    }
+  ]
+}

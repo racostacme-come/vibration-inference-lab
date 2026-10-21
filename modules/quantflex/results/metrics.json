@@ -1,0 +1,21 @@
+{
+  "seed": 20261020,
+  "replicates_per_case": 10000,
+  "cases": 14,
+  "model": {
+    "mass_kg": 1,
+    "damping_Ns_m": 0.4,
+    "stiffness_N_m": 100,
+    "frequency_Hz": 1,
+    "sample_rate_Hz": 40,
+    "step_m": 0.001
+  },
+  "max_unclipped_coefficient_z": 1.9181356278172632,
+  "max_unclipped_mse_abs_z": 1.9108902598260051,
+  "max_unclipped_energy_abs_z": 2.0312704367236334,
+  "qr_oracle_max_error_m": 1.734723475976807e-18,
+  "zero_energy_negative_fraction": 0.6384,
+  "clipped_fraction": 0.4359525,
+  "clipped_corrected_energy_ratio": 0.37104583112844364,
+  "physical_validation": false
+}

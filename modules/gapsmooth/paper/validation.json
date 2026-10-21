@@ -1,0 +1,29 @@
+{
+  "pages": 3,
+  "page_limit": 5,
+  "engine": "tectonic",
+  "overfull_boxes": 0,
+  "undefined_references": 0,
+  "inputs_sha256": {
+    "paper/paper.tex": "1b63559ede61d0ac5577394c8c163eaf01d152ca331b6aa9eb852c96eed7b162",
+    "paper/numbers.tex": "0bebbd6686905b20fa8199c5fcd0c9385bad5a4d9b59be89bb659b66ba80a3b7",
+    "paper/build.py": "b2797606eaf1f13692231fdb14eb10e442141b24c2de5eaa7fb45c492e983550",
+    "pyproject.toml": "64e2510cc5e80cedf0f00febc62f733b0836e68150c6915f9dcf19de964b7cdf",
+    "src/gapsmooth/__init__.py": "c092ed8b1ddea687e9c77c032d2d2f99651677e865d695c32c823cb4594c7601",
+    "src/gapsmooth/cli.py": "eac36ba26ca2cd0bde9acfb9dd9f54c41e774ea022cc719c50b2a8a548740bea",
+    "src/gapsmooth/experiments.py": "9d5716f40f730e4789c21d29f1f668abd91d396d09c48570cbe07e53f8f19795",
+    "src/gapsmooth/inference.py": "cd6d6254c39a0c0096e902092e546292d65ce33a78c6540ea878e2373008b271",
+    "src/gapsmooth/model.py": "48a1bf731ae862d2b08baf11c36a87f52fbee9462f3995272cdd34f5988d4d74",
+    "src/gapsmooth/reference.py": "a47184a81d7bc561b4a0afd2d8279a257274a6d4d976ed05cec60cf5fca9aafd",
+    "tests/test_cli.py": "dbdc33c9ee5c91668cf6d36b916f93c121cb0e545a30fcaef32616c5bc0e5563",
+    "tests/test_inference.py": "5599a208af98fcc45735a13b5bb9c4ab99d7962030c9a8d336ded6c5a74a24fd",
+    "scripts/check_manifest.py": "9ee2fe5c5e22f2d476572a2067327646ea02ad3adf46cb0d6473e3595ffd311d",
+    "scripts/check_samples.py": "80c168dbd194ac985676c7a22134ee6c6d42f784d7b619dbd382c56d11c3c0b3",
+    "examples/results/metrics.json": "5e00116b0ae5249a7fa3f5047199371381b1562dd5cc3a15a266a59867947e08",
+    "examples/results/outage.pdf": "10507c723ddb3e4ffe5623862e0f54859de4c1af02a94d12b7a1fc9df91faa33",
+    "examples/results/outage.png": "b68693a1333c1e7eecd6ec84b746588785e79004c9f97848cfb7c9f626ce99b6",
+    "examples/results/refinement.pdf": "fe269ef9439ed557f751f1f1a10c4bc5a40308c011a308f19d10491429ca1867",
+    "examples/results/trace.csv": "f3f4845196ecd482e0cab65d7d40405c9dea90a98d88b0e6db39888eaa9021ce"
+  },
+  "pdf_sha256": "2c6e37b12f231f5f5a137dfe5634b21070be1591bc0e039bcd27fdc0593584da"
+}

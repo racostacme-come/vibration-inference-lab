@@ -1,0 +1,83 @@
+{
+  "setup": {
+    "seed": 20261020,
+    "replicates": 24,
+    "cases_per_replicate": 256,
+    "ensemble_members": 128,
+    "displacement_scale_m": 0.001,
+    "spring_stiffness_N_per_m": 1000000.0,
+    "area_m2": 0.0001,
+    "stress_threshold_Pa": 10000000.0,
+    "truth_correlation": 0.9
+  },
+  "population": [
+    {
+      "model": "Calibrated",
+      "marginal_crps": 0.5641895835477564,
+      "log_score": 2.0075114629985196,
+      "variogram": 0.07267604552648371,
+      "energy": 0.8266893056837235,
+      "energy_quad_error_estimate": 3.1696750912216276e-14,
+      "extension_exceedance": 0.02534731867746821
+    },
+    {
+      "model": "Independent",
+      "marginal_crps": 0.5641895835477564,
+      "log_score": 2.8378770664093453,
+      "variogram": 0.6679721510633705,
+      "energy": 0.8626230359262945,
+      "energy_quad_error_estimate": 5.375531465931777e-12,
+      "extension_exceedance": 0.4795001221869535
+    },
+    {
+      "model": "Anticorrelated",
+      "marginal_crps": 0.5641895835477564,
+      "log_score": 3.627369363516788,
+      "variogram": 1.1236122066043446,
+      "energy": 0.8965156966754956,
+      "energy_quad_error_estimate": 1.0273931997249402e-11,
+      "extension_exceedance": 0.5637028616507731
+    },
+    {
+      "model": "Common bias",
+      "marginal_crps": 0.835092873200735,
+      "log_score": 2.5338272524722036,
+      "variogram": 0.07267604552648371,
+      "energy": 1.2048643466771305,
+      "energy_quad_error_estimate": 1.0473919283736021e-13,
+      "extension_exceedance": 0.02534731867746821
+    }
+  ],
+  "finite_ensemble": {
+    "Calibrated": {
+      "energy_mean": 0.8236311327384925,
+      "energy_replicate_se": 0.006704852409793012,
+      "observed_empirical_minus_unbiased": 0.006348747501370248,
+      "expected_empirical_bias": 0.0064585102006540895
+    },
+    "Independent": {
+      "energy_mean": 0.8588022128016765,
+      "energy_replicate_se": 0.006414613385955251,
+      "observed_empirical_minus_unbiased": 0.006890839930853677,
+      "expected_empirical_bias": 0.006923647855099673
+    },
+    "Anticorrelated": {
+      "energy_mean": 0.8910771112067589,
+      "energy_replicate_se": 0.007119857693038657,
+      "observed_empirical_minus_unbiased": 0.006723297850293769,
+      "expected_empirical_bias": 0.0068083182348674985
+    },
+    "Common bias": {
+      "energy_mean": 1.1941054517946512,
+      "energy_replicate_se": 0.011105887203209945,
+      "observed_empirical_minus_unbiased": 0.006348747501370285,
+      "expected_empirical_bias": 0.0064585102006540895
+    }
+  },
+  "validation": {
+    "cpp_distance_oracle_max_abs": 6.661338147750939e-16,
+    "equilibrium_covariance_relative": 4.898252643384676e-16,
+    "isotropic_norm_absolute_error": 2.220446049250313e-16
+  },
+  "risk_ratio_independent_to_truth": 18.91719310781348
+}

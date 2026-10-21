@@ -1,0 +1,15 @@
+{
+  "pages": 4,
+  "engine": "tectonic.exe",
+  "sha256": {
+    "paper/paper.tex": "503cdb55c8418fcb8e45e7618c06c91bdd0d2fc6e0fac0f9c0e04ed97859725f",
+    "results/numbers.tex": "ee230c5d40fe6210d78a2c7f6da5a1cf8160d20c473e52e111284fc23014a024",
+    "results/table.tex": "14565ee2333a40e5fe0385ddf339590c23b77c5bc9b891d4285cea8a7e429c25",
+    "results/joint-study.png": "c6fd966a494dcbc41ddeaf2d9be4bf2e5bc0dfd5c506cd0a70fd006f6557e289",
+    "results/metrics.json": "06cee526802c5391cf168c9e24cc2242bcdc754f754739f9e13d1ea3429b0ebf",
+    "results/population.csv": "fb916e8da2dc460fc1966b2a7712bed1f1e787b9c2dc27b6440d5a70b3bceea3",
+    "results/correlation.csv": "b82db7c96f833ddd860a6a744b7d0fc0bea7478c3162261084a82681cf47d1c5",
+    "results/replicates.csv": "74c238f49976bed96c424f0edf60249af50e26dde797d74dee58b60bae821c95",
+    "paper/paper.pdf": "12b8dd8a14e1057558e2e479a010ad58506bacb58797822a1c9cc827b1e85067"
+  }
+}
