@@ -13,6 +13,8 @@ Local Windows, Python 3.12.2, MSVC 19.44.35219.0. Dependency versions are record
 - 256 actual prior-matched filter/smoother runs: MSE 1.031742e-6 and 8.589057e-7 m². Expected MSE 9.784194e-7 and 8.144805e-7; Monte Carlo SE 5.731130e-8 and 4.821708e-8. Paired improvement SE 3.350686e-8 m².
 - Three-page Tectonic manuscript compiled; layout overflows were repaired and all pages visually inspected. See `paper/build-report.json` for input/PDF hashes.
 
-Hosted Linux/Windows/manuscript CI and portable-clone validation are pending first publication. No release is declared by this record.
+Hosted [run 40239408015](https://github.com/racostacme-come/vibration-inference-lab/actions/runs/40239408015) passed Linux, Windows and manuscript jobs at code revision `d9178b5ab87e9aabe53b302722c6e82c20a38f9b`. Downloaded Linux and Windows reports each confirm 294 Python tests, four native tests and reproduced numerical metrics within rtol=1e-6, atol=1e-11. Both fresh local clones (`core.autocrlf=false` and `true`) pass all 209 hashes. All 19 original component repositories remain clean.
+
+The independent CI pdfLaTeX output also has three pages. All nine input/output hashes were checked, and all three CI pages were visually inspected in addition to the three local pages. Two transient artifact-download transport failures were resolved by retrying through the GitHub connector/CLI; no validation failure was concealed. Release publication is recorded by Git tags and GitHub releases. No physical or external experimental validation is inferred from these software checks.
 
 Implementation agreement (including native invariants) is separate from continuous-time refinement. Exact stochastic transition moments do not prove sample-path accuracy. The ensemble tests known-prior linear-estimation risk, not Gaussian posterior coverage. No physical validation, sanitizer run or complete historical reproduction campaign is claimed.

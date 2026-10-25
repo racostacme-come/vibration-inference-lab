@@ -1,0 +1,38 @@
+{
+  "validated_code_commit": "d9178b5ab87e9aabe53b302722c6e82c20a38f9b",
+  "ci_run": 40239408015,
+  "ci_url": "https://github.com/racostacme-come/vibration-inference-lab/actions/runs/40239408015",
+  "jobs": {
+    "ubuntu": "success",
+    "windows": "success",
+    "paper": "success"
+  },
+  "python_tests_per_platform": 294,
+  "native_tests_per_platform": 4,
+  "artifact_numerics": "Both downloaded reports match local results at rtol=1e-6, atol=1e-11.",
+  "paper": {
+    "local_pages": 3,
+    "ci_pages": 3,
+    "all_pages_visually_reviewed": true,
+    "ci_build_report": {
+      "pages": 3,
+      "sha256": {
+        "paper/paper.tex": "4e9836746365f1e2b8ba06ab616c0dce78c6270b34b7d4ac613904604b7658d2",
+        "results/integration.json": "e5a284e025d8b420532c4b75f92dcdaab166f1f80c6ae21dee0785e365c746ab",
+        "results/table.tex": "545b620797bd3e12cd464d36792bc587186f97c96232652a3a7b21fd0bd2ccb2",
+        "integration.py": "e74bda17f2b1eeee2d79f920bbd1b9aefb564603f7d63861842e3a298d62e5d7",
+        "suite.json": "f5f371cfc635bf7a26a4acb461331bcc297f66e46daaadec9e5e84cc13178835",
+        "verification.py": "f2fa51bffd2ad4521d4dc3db3444cf4956006b92000891d937d5a5eaa65caf27",
+        "results/independent.json": "069b3fb74d560d527de412763087b663d5eecc688b8fa5897539114add1cd887",
+        "results/independent-table.tex": "88936dc5f1eca0eb2a20bf9a12a8e03a90794eb15f5087c393c0ea23a55725b4",
+        "paper/paper.pdf": "09d97eaca9a307ec345fd0fae6659cebfec15acceb1e8064a702767b01e4d6fe"
+      }
+    }
+  },
+  "originals": "All 19 clean; 209 imported Git blobs match; no patches.",
+  "portable_checkouts": [
+    "core.autocrlf=false",
+    "core.autocrlf=true"
+  ],
+  "checked_utc": "2026-10-25T22:21:09.348351+00:00"
+}
