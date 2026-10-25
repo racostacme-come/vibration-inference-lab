@@ -1,0 +1,131 @@
+{
+  "experiment": "independent-vibration-verification",
+  "transition_max_error": 2.6645352591003757e-15,
+  "response_max_error": 2.355754480376504e-15,
+  "process_covariance_max_error": 2.1649348980190553e-15,
+  "inference_cases": [
+    {
+      "intensity": 0.0,
+      "mask": "interior",
+      "max_mean_error": 2.0344836926255994e-14,
+      "max_covariance_error": 4.191091917959966e-15,
+      "min_covariance_eigenvalue": 9.25506170486015e-06,
+      "max_smoothing_variance_increment": 5.929230630780102e-21
+    },
+    {
+      "intensity": 0.0,
+      "mask": "leading-trailing",
+      "max_mean_error": 1.6681100944992977e-14,
+      "max_covariance_error": 4.98732999343332e-16,
+      "min_covariance_eigenvalue": 7.354644231286699e-06,
+      "max_smoothing_variance_increment": 1.6940658945086007e-21
+    },
+    {
+      "intensity": 0.0,
+      "mask": "all-missing",
+      "max_mean_error": 1.3877787807814457e-16,
+      "max_covariance_error": 2.1094237467877974e-15,
+      "min_covariance_eigenvalue": 0.004743420438661164,
+      "max_smoothing_variance_increment": 5.63653681063929e-17
+    },
+    {
+      "intensity": 0.0,
+      "mask": "all-observed",
+      "max_mean_error": 2.3869795029440866e-14,
+      "max_covariance_error": 4.191091917959966e-15,
+      "min_covariance_eigenvalue": 4.105460847610863e-06,
+      "max_smoothing_variance_increment": 1.0587911840678754e-22
+    },
+    {
+      "intensity": 0.6,
+      "mask": "interior",
+      "max_mean_error": 1.2212453270876722e-15,
+      "max_covariance_error": 4.3021142204224816e-15,
+      "min_covariance_eigenvalue": 1.6800419910666597e-05,
+      "max_smoothing_variance_increment": 2.395515053953568e-21
+    },
+    {
+      "intensity": 0.6,
+      "mask": "leading-trailing",
+      "max_mean_error": 6.661338147750939e-16,
+      "max_covariance_error": 1.3530843112619095e-15,
+      "min_covariance_eigenvalue": 2.902369522221418e-05,
+      "max_smoothing_variance_increment": 4.235164736271502e-22
+    },
+    {
+      "intensity": 0.6,
+      "mask": "all-missing",
+      "max_mean_error": 1.3877787807814457e-16,
+      "max_covariance_error": 2.4424906541753444e-15,
+      "min_covariance_eigenvalue": 0.008792748927688856,
+      "max_smoothing_variance_increment": 2.6020852139652106e-18
+    },
+    {
+      "intensity": 0.6,
+      "mask": "all-observed",
+      "max_mean_error": 1.1379786002407855e-15,
+      "max_covariance_error": 4.3021142204224816e-15,
+      "min_covariance_eigenvalue": 1.2755903741210952e-05,
+      "max_smoothing_variance_increment": 0.0
+    }
+  ],
+  "time_refinement": [
+    {
+      "rho_inf": 0.5,
+      "steps": 50,
+      "scaled_state_error": 0.0018333561854586532,
+      "observed_order": null
+    },
+    {
+      "rho_inf": 0.5,
+      "steps": 100,
+      "scaled_state_error": 0.0004607900569805525,
+      "observed_order": 1.992305609234552
+    },
+    {
+      "rho_inf": 0.5,
+      "steps": 200,
+      "scaled_state_error": 0.00011537710695941647,
+      "observed_order": 1.997752592463894
+    },
+    {
+      "rho_inf": 0.5,
+      "steps": 400,
+      "scaled_state_error": 2.885914379728837e-05,
+      "observed_order": 1.9992565906732063
+    },
+    {
+      "rho_inf": 1.0,
+      "steps": 50,
+      "scaled_state_error": 0.0012282851559520928,
+      "observed_order": null
+    },
+    {
+      "rho_inf": 1.0,
+      "steps": 100,
+      "scaled_state_error": 0.0003077406374320313,
+      "observed_order": 1.9968586619067472
+    },
+    {
+      "rho_inf": 1.0,
+      "steps": 200,
+      "scaled_state_error": 7.69768655284539e-05,
+      "observed_order": 1.999218134037362
+    },
+    {
+      "rho_inf": 1.0,
+      "steps": 400,
+      "scaled_state_error": 1.9246820976863252e-05,
+      "observed_order": 1.9998047526804892
+    }
+  ],
+  "dither": {
+    "seed": 20261025,
+    "samples": 120000,
+    "step": 0.02,
+    "normalized_mean": -0.0002023238013989017,
+    "variance_ratio": 1.0011473223889378,
+    "max_absolute_error_over_step": 0.49999398958902247
+  },
+  "scope": "Synthetic verification only. Dense conditioning checks linear second-moment estimators; it does not validate Gaussian likelihood or physical sensor data."
+}

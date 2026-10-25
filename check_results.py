@@ -1,0 +1,29 @@
+"""Recompute every recorded diagnostic without overwriting the evidence."""
+import json
+import math
+from pathlib import Path
+from integration import experiment
+from verification import experiment as independent
+
+ROOT = Path(__file__).resolve().parent
+
+
+def compare(actual, expected, path='root'):
+    if isinstance(expected, dict):
+        assert actual.keys() == expected.keys(), path
+        for key in expected:
+            compare(actual[key], expected[key], path+'.'+key)
+    elif isinstance(expected, list):
+        assert len(actual) == len(expected), path
+        for index, (a, b) in enumerate(zip(actual, expected)):
+            compare(a, b, f'{path}[{index}]')
+    elif isinstance(expected, float):
+        assert math.isfinite(actual) and math.isclose(actual, expected, rel_tol=1e-6, abs_tol=1e-11), (path, actual, expected)
+    else:
+        assert actual == expected, (path, actual, expected)
+
+
+if __name__ == '__main__':
+    for name, function in [('integration', experiment), ('independent', independent)]:
+        compare(function(), json.loads((ROOT/f'results/{name}.json').read_text()), name)
+        print(f'{name}: all recorded values reproduced (rtol=1e-6, atol=1e-11).')

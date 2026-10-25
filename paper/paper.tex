@@ -1,0 +1,71 @@
+\documentclass[10pt,a4paper]{article}
+\usepackage[margin=22mm]{geometry}
+\usepackage{amsmath,booktabs,hyperref}
+\hypersetup{colorlinks=true,urlcolor=blue}
+\title{Vibration Inference Lab:\\Independent Verification from Oscillator Dynamics\\to Quantized Outage Estimates}
+\author{}
+\date{25 October 2026}
+\begin{document}
+\maketitle
+\begin{abstract}
+Can a common oscillator interface separate errors in dynamics, digitization and missing-observation inference? We connect exact mechanical response, subtractive-dither measurements and linear filtering/smoothing, while retaining seven component snapshots with 209 file hashes. Independent closed-form transitions, covariance quadrature and dense batch estimation supplement comparisons between implementations. The original fixed-state example has slightly worse smoothed outage error, whereas a separate prior-matched ensemble supports the predicted reduction in mean-square error. Time refinement approaches second order. An original C++17 handoff test checks rectangular-load convolution. These are synthetic verification results; no new estimation theory or physical validation is claimed.
+\end{abstract}
+\section{Research question and interfaces}
+The research question is whether model consistency, time-discretization error and inference risk can be distinguished within one reproducible pipeline. DampWatch supplies dimensional dynamics, QuantFlex digitization, and GapSmooth state estimates. AliasGuard, ForceWindow, LoadCoherent and JointGuard remain complementary sampling, inverse-load, forecast and risk tools; only ForceWindow's native recurrence is additionally coupled to the independent load-response test. Other capabilities are not silently applied to the outage experiment.
+
+The integration preserves original Python packages, C++ kernels, licenses and supporting papers. A root runner installs packages, executes isolated test processes, verifies hashes, builds native tests, regenerates experiments and compiles this synthesis. Pinned source commits are in \texttt{suite.json}; no imported numerical source was modified. The original contribution is the shared evidence interface, independent references, connected experiments and explicit interpretation of their limits. Read-only DTU material on SDE filtering and sampling/quantization motivated the question; no private course files, solutions or teaching implementations are distributed.
+\section{Mechanical and statistical model}
+Let $x=(u,v)^T$, with displacement in metres and velocity in metres per second:
+\[
+ dx=A x\,dt+\sqrt q\,e_v\,dW,\qquad
+ A=\begin{pmatrix}0&1\\-\omega^2&-2\zeta\omega\end{pmatrix},\quad e_v=(0,1)^T.
+\]
+Here $\omega$ is in rad/s and $q$ in m$^2$/s$^3$. The dimensional mapping is $M=m$, $C=2m\zeta\omega$, $K=m\omega^2$. For $h\geq0$,
+\[
+ F(h)=e^{Ah},\qquad Q(h)=q\int_0^h F(s)e_ve_v^TF(s)^T\,ds.
+\]
+The component transition uses a block exponential and doubling. Our reference instead uses $\alpha=\zeta\omega$, $\beta=\omega\sqrt{1-\zeta^2}$ and
+\[
+ F(t)=e^{-\alpha t}\begin{pmatrix}c+\alpha s&s\\-\omega^2s&c-\alpha s\end{pmatrix},
+ \quad c=\cos(\beta t),\ s=\sin(\beta t)/\beta.
+\]
+At critical damping $c=1,s=t$; above critical damping, hyperbolic functions use $\beta=\omega\sqrt{\zeta^2-1}$. These formulas and Gauss--Legendre integration of $Q$ do not call a matrix exponential or component transition. They are bounded-range test references, not overflow-safe production solvers for arbitrary inputs.
+
+For independent uniform dither $d_k\sim U(-\Delta/2,\Delta/2)$ and no clipping,
+\[
+ y_k=\Delta\left\lfloor (u_k+d_k)/\Delta+1/2\right\rfloor-d_k,
+ \qquad R=\operatorname{Var}(y_k-u_k)=\Delta^2/12.
+\]
+This is an explicit subtractive-dither model, not ordinary rounding or a hardware ADC model~\cite{dither}. Missing samples are NaN and trigger prediction only. Kalman and RTS recursions use these second moments~\cite{bfs}; their estimates are linear minimum-mean-square estimators under the stated prior, but uniform measurement errors do not imply Gaussian posteriors. No likelihood or interval-coverage calibration is claimed.
+\section{Connected experiments and measured risk}
+The fixed-state case has $\omega=2\pi$, $\zeta=0.05$, $q=0$, $x(0)=(0.1,0)^T$, $\Delta=0.02$ m, and 201 samples on $[0,4]$ s. The closed interval $[1.5,2.5]$ s removes 51 observations. The estimator uses mean zero and $P_0=\operatorname{diag}(0.04,1)$, with the prior before the first measurement. NumPy seed 20261021 is retained from the initial draft.
+
+A separate ensemble draws 256 independent $x(0)\sim N(0,P_0)$ and independent dither with seed 20261025, on 81 samples over the same interval (21 missing). Each trial runs the actual component filter and smoother. Per-trial loss is the mean squared displacement error across the outage. Monte Carlo standard errors are sample standard deviations of these trial losses divided by $\sqrt{256}$; paired error differences use their own standard error. Expected losses average the corresponding estimator error-covariance diagonals over the outage.
+\input{../results/table.tex}
+The original fixed-state smoothed RMSE is slightly higher than the filtered RMSE. Retaining that result exposes an incorrect universal-improvement assertion in the draft test. Smoothing reduces error covariance under a matched model; it need not improve each trajectory. In the prior-matched ensemble, smoothed MSE is about 16.8\% lower. Each measured MSE is within one reported Monte Carlo standard error of its expected value. These observations concern this schedule and known model, not universal empirical superiority.
+\section{Independent verification and refinement}
+Transition and dimensional-response checks use $\zeta\in\{0.05,1,1.7\}$, $\omega=2\pi$, and times $0,10^{-4},0.07,0.6,2$ s. The dimensional response uses $m=2$ and $x(0)=(0.1,-0.03)^T$ to check mass normalization. Covariance quadrature uses 96 Gauss--Legendre nodes and $q=0.6$; additional 48-node, semigroup and stationary-covariance tests exercise its consistency.
+
+For a distinct inference oracle, construct joint state covariances $C_{ij}=F(t_i-t_j)C_{jj}$ for $i\geq j$, and symmetry for $i<j$. With observation matrix $H=(1,0)$ and selected observation indices $O$, direct dense linear regression gives
+\[
+ \widehat x_k=m_k+C_{kO}(C_{OO}+RI)^{-1}(y_O-m_O),\quad
+ P_k=C_{kk}-C_{kO}(C_{OO}+RI)^{-1}C_{Ok},
+\]
+where observation-index covariances include $H$ on the relevant sides. Prefix observations provide filtering; all observations provide smoothing. This reference uses linear solves, analytic transitions and covariance quadrature, not the component recursion. Eight cases combine $q=0,0.6$ with interior gaps, missing endpoints, all missing and all observed. Times are $2+(0,.013,.06,.19,.31,.55,.8,1.11)$ s, with a correlated positive-definite prior. Both means and complete covariance matrices are compared.
+
+Generalized-alpha runs use $\rho_\infty=0.5,1$, $x(0)=(0.1,-0.03)^T$, final time 1.3 s and 50--400 steps. Reported error is $\max_k\sqrt{(u_k-u(t_k))^2+[(v_k-v(t_k))/\omega]^2}$ in metres; observed order is $\log_2(E_h/E_{h/2})$. The continuous closed form supplies the reference.
+\input{../results/independent-table.tex}
+The independent dither study uses 120000 random signal values uniform on $[-0.1,0.1]$ m and independent dither, with $\Delta=0.02$ m and seed 20261025. The error bound is checked, and a deliberately clipped case demonstrates why the uniform-noise assumption must not be reused after saturation.
+
+The new C++17 check passes exact $F(h)$ and constant-load input $B=((1-F_{11})/\omega^2,-F_{21}/\omega^2)^T$ to ForceWindow's recurrence. It compares five signed rectangular loads and 73 tail samples against direct continuous step-response superposition at $h=0.013$ s. Three additional native tests exercise preserved streaming, adjoint/causality and energy-score invariants. This validates native behavior beyond successful extension compilation.
+\section{Evidence, limitations and reproduction}
+The local integrated run passed 284 component Python tests and ten root tests, plus four C++17 CTests. Source integrity passes for all 209 files. Hosted Linux/Windows jobs repeat these checks; their actual status is recorded in repository release evidence rather than inferred from local success. The manuscript job checks references, layout diagnostics and a five-page limit. A build manifest binds this source, code, result JSON, generated tables and PDF by SHA-256.
+
+\emph{Implementation consistency} comprises cross-module agreement, dense-vs-recursive checks and native invariants. \emph{Discrete inference risk} concerns quantization and finite observations under known second moments. \emph{Continuous-time error} is measured for generalized-alpha against the ODE solution; exact-transition moment tests do not establish pathwise SDE accuracy or spatial PDE convergence. \emph{Physical validity} would require measured structural and sensor data and is not supplied. Nonlinear dynamics, parameter fitting, model mismatch, colored dither, saturation correction and anti-alias filtering are outside the connected experiment. Full historical component reproduction and sanitizer campaigns are not claimed.
+
+From a fresh Python 3.12 environment, run \texttt{python suite.py install}, then the \texttt{verify}, \texttt{test}, \texttt{native}, and \texttt{experiment} commands. Compile with \texttt{python suite.py paper --engine pdflatex}. On Windows a short native build path can be passed with \texttt{--build-root}. Machine-readable evidence lives in \texttt{results/} and \texttt{validation/}. Source, provenance and supporting studies are available at \href{https://github.com/racostacme-come/vibration-inference-lab}{the Vibration Inference Lab repository}. No new filtering theory, affiliation or external experimental validation is asserted.
+\begin{thebibliography}{9}
+\bibitem{bfs} S. S\"arkk\"a and L. Svensson. \emph{Bayesian Filtering and Smoothing}, 2nd ed. Cambridge University Press, 2023. \href{https://doi.org/10.1017/9781108917407}{doi:10.1017/9781108917407}.
+\bibitem{dither} S. P. Lipshitz, R. A. Wannamaker and J. Vanderkooy. Quantization and dither: A theoretical survey. \emph{J. Audio Eng. Soc.}, 40(5):355--375, 1992. \href{https://aes.org/publications/elibrary/elibrary-page/?id=7047}{Publisher record}.
+\end{thebibliography}
+\end{document}

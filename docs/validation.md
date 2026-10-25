@@ -1,0 +1,18 @@
+# Validation record: 25 October 2026
+
+Local Windows, Python 3.12.2, MSVC 19.44.35219.0. Dependency versions are recorded in `requirements-reproduced.txt`. This records execution, not a claim about future runs.
+
+- All 209 manifest entries match imported bytes and original pinned Git blobs. No imported modifications.
+- 284 component Python tests plus 10 root tests passed (294 total). Full output: `validation/tests.json`.
+- Four C++17 CTests passed, with warnings as errors: streaming, state/adjoint, energy score and original oscillator handoff. Full output: `validation/native.json`.
+- Closed-form transition maximum difference 2.665e-15; dimensional response 2.356e-15; process-covariance quadrature 2.165e-15.
+- Eight independent dense-conditioning cases: mean difference <=2.387e-14; covariance difference <=4.303e-15. Nonuniform times, missing endpoints/interior/all/none, q=0 and q=0.6.
+- Generalized-alpha finest observed orders 1.999257 (rho=0.5), 1.999805 (rho=1). Errors 2.885914e-5 and 1.924682e-5 m in the explicitly scaled state norm.
+- Uniform dither sample variance/theoretical variance =1.001147 across 120000 draws. A clipped counterexample rejects the uniform-error assumption.
+- Fixed-state outage RMSE: filtered 5.568395e-4 m, smoothed 5.616128e-4 m. The draft assertion of guaranteed realized improvement failed and was replaced by covariance/ensemble checks; its seed was retained.
+- 256 actual prior-matched filter/smoother runs: MSE 1.031742e-6 and 8.589057e-7 m². Expected MSE 9.784194e-7 and 8.144805e-7; Monte Carlo SE 5.731130e-8 and 4.821708e-8. Paired improvement SE 3.350686e-8 m².
+- Three-page Tectonic manuscript compiled; layout overflows were repaired and all pages visually inspected. See `paper/build-report.json` for input/PDF hashes.
+
+Hosted Linux/Windows/manuscript CI and portable-clone validation are pending first publication. No release is declared by this record.
+
+Implementation agreement (including native invariants) is separate from continuous-time refinement. Exact stochastic transition moments do not prove sample-path accuracy. The ensemble tests known-prior linear-estimation risk, not Gaussian posterior coverage. No physical validation, sanitizer run or complete historical reproduction campaign is claimed.

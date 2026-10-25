@@ -1,0 +1,47 @@
+name: Integrated validation
+on: [push, pull_request]
+permissions:
+  contents: read
+jobs:
+  suite:
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, windows-latest]
+    runs-on: ${{ matrix.os }}
+    steps:
+      - run: git config --global core.autocrlf false
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+      - uses: actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97
+        with:
+          python-version: '3.12'
+      - run: python suite.py verify
+      - run: python suite.py install
+      - run: python suite.py test
+      - run: python check_results.py
+      - run: python suite.py native
+      - run: python suite.py experiment
+      - uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a
+        if: always()
+        with:
+          name: validation-${{ matrix.os }}
+          path: |
+            validation/
+            results/
+  paper:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+      - uses: actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97
+        with:
+          python-version: '3.12'
+      - run: sudo apt-get update && sudo apt-get install -y texlive-latex-extra
+      - run: python -m pip install pypdf
+      - run: python suite.py paper --engine /usr/bin/pdflatex
+      - uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a
+        with:
+          name: manuscript
+          path: |
+            paper/paper.pdf
+            paper/paper.log
+            paper/build-report.json

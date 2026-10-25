@@ -1,0 +1,40 @@
+[
+  {
+    "command": [
+      "cmake",
+      "-S",
+      "D:\\Carpetas Raphi 2026\\TUM SoSe2026\\Courses\\Computational Mechanics Projects\\major-projects\\vibration-inference-lab",
+      "-B",
+      "D:\\Carpetas Raphi 2026\\TUM SoSe2026\\Courses\\Computational Mechanics Projects\\major-projects\\vibration-inference-lab\\..\\..\\.native-vibration",
+      "-DBUILD_TESTING=ON",
+      "-DCMAKE_BUILD_TYPE=Release"
+    ],
+    "returncode": 0,
+    "output": "-- Selecting Windows SDK version 10.0.26100.0 to target Windows 10.0.26200.\n-- Configuring done (0.1s)\n-- Generating done (0.4s)\n-- Build files have been written to: D:/Carpetas Raphi 2026/TUM SoSe2026/Courses/Computational Mechanics Projects/.native-vibration\n"
+  },
+  {
+    "command": [
+      "cmake",
+      "--build",
+      "D:\\Carpetas Raphi 2026\\TUM SoSe2026\\Courses\\Computational Mechanics Projects\\major-projects\\vibration-inference-lab\\..\\..\\.native-vibration",
+      "--config",
+      "Release"
+    ],
+    "returncode": 0,
+    "output": "Versi\u00c3\u00b3n de MSBuild 17.14.23+b0019275e para .NET Framework\n\n  1>Checking Build System\n  Building Custom Rule D:/Carpetas Raphi 2026/TUM SoSe2026/Courses/Computational Mechanics Projects/major-projects/vibration-inference-lab/CMakeLists.txt\n  native_energy.vcxproj -> D:\\Carpetas Raphi 2026\\TUM SoSe2026\\Courses\\Computational Mechanics Projects\\.native-vibration\\Release\\native_energy.exe\n  Building Custom Rule D:/Carpetas Raphi 2026/TUM SoSe2026/Courses/Computational Mechanics Projects/major-projects/vibration-inference-lab/CMakeLists.txt\n  native_state.vcxproj -> D:\\Carpetas Raphi 2026\\TUM SoSe2026\\Courses\\Computational Mechanics Projects\\.native-vibration\\Release\\native_state.exe\n  Building Custom Rule D:/Carpetas Raphi 2026/TUM SoSe2026/Courses/Computational Mechanics Projects/major-projects/vibration-inference-lab/CMakeLists.txt\n  oscillator_handoff.vcxproj -> D:\\Carpetas Raphi 2026\\TUM SoSe2026\\Courses\\Computational Mechanics Projects\\.native-vibration\\Release\\oscillator_handoff.exe\n  Building Custom Rule D:/Carpetas Raphi 2026/TUM SoSe2026/Courses/Computational Mechanics Projects/major-projects/vibration-inference-lab/CMakeLists.txt\n  streaming_invariants.vcxproj -> D:\\Carpetas Raphi 2026\\TUM SoSe2026\\Courses\\Computational Mechanics Projects\\.native-vibration\\Release\\streaming_invariants.exe\n  Building Custom Rule D:/Carpetas Raphi 2026/TUM SoSe2026/Courses/Computational Mechanics Projects/major-projects/vibration-inference-lab/CMakeLists.txt\n"
+  },
+  {
+    "command": [
+      "ctest",
+      "--test-dir",
+      "D:\\Carpetas Raphi 2026\\TUM SoSe2026\\Courses\\Computational Mechanics Projects\\major-projects\\vibration-inference-lab\\..\\..\\.native-vibration",
+      "-C",
+      "Release",
+      "--verbose",
+      "--output-on-failure",
+      "--no-tests=error"
+    ],
+    "returncode": 0,
+    "output": "UpdateCTestConfiguration  from :D:/Carpetas Raphi 2026/TUM SoSe2026/Courses/Computational Mechanics Projects/.native-vibration/DartConfiguration.tcl\nParse Config file:D:/Carpetas Raphi 2026/TUM SoSe2026/Courses/Computational Mechanics Projects/.native-vibration/DartConfiguration.tcl\nTest project D:/Carpetas Raphi 2026/TUM SoSe2026/Courses/Computational Mechanics Projects/.native-vibration\nConstructing a list of tests\nDone constructing a list of tests\nUpdating test list for fixtures\nAdded 0 tests to meet fixture requirements\nChecking test dependency graph...\nChecking test dependency graph end\ntest 1\n    Start 1: streaming_invariants\n\n1: Test command: \"D:\\Carpetas Raphi 2026\\TUM SoSe2026\\Courses\\Computational Mechanics Projects\\.native-vibration\\Release\\streaming_invariants.exe\"\n1: Working Directory: D:/Carpetas Raphi 2026/TUM SoSe2026/Courses/Computational Mechanics Projects/.native-vibration\n1: Test timeout computed to be: 1500\n1: Native streaming, reset, phase and transactional-input checks passed\n1/4 Test #1: streaming_invariants .............   Passed    0.02 sec\ntest 2\n    Start 2: native_state\n\n2: Test command: \"D:\\Carpetas Raphi 2026\\TUM SoSe2026\\Courses\\Computational Mechanics Projects\\.native-vibration\\Release\\native_state.exe\"\n2: Working Directory: D:/Carpetas Raphi 2026/TUM SoSe2026/Courses/Computational Mechanics Projects/.native-vibration\n2: Test timeout computed to be: 1500\n2: Forward, adjoint, causal nullspace and input checks passed\n2/4 Test #2: native_state .....................   Passed    0.02 sec\ntest 3\n    Start 3: native_energy\n\n3: Test command: \"D:\\Carpetas Raphi 2026\\TUM SoSe2026\\Courses\\Computational Mechanics Projects\\.native-vibration\\Release\\native_energy.exe\"\n3: Working Directory: D:/Carpetas Raphi 2026/TUM SoSe2026/Courses/Computational Mechanics Projects/.native-vibration\n3: Test timeout computed to be: 1500\n3: Native analytical energy scores and invalid-size guard passed\n3/4 Test #3: native_energy ....................   Passed    0.02 sec\ntest 4\n    Start 4: oscillator_handoff\n\n4: Test command: \"D:\\Carpetas Raphi 2026\\TUM SoSe2026\\Courses\\Computational Mechanics Projects\\.native-vibration\\Release\\oscillator_handoff.exe\"\n4: Working Directory: D:/Carpetas Raphi 2026/TUM SoSe2026/Courses/Computational Mechanics Projects/.native-vibration\n4: Test timeout computed to be: 1500\n4: Continuous rectangular-load response maximum error: 3.6429192995512949e-17\n4/4 Test #4: oscillator_handoff ...............   Passed    0.02 sec\n\n100% tests passed out of 4\n\nTotal Test time (real) =   0.10 sec\n"
+  }
+]

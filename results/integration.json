@@ -1,0 +1,26 @@
+{
+  "experiment": "quantized-vibration-with-outage",
+  "seed": 20261021,
+  "samples": 201,
+  "missing_samples": 51,
+  "transition_max_difference": 1.5210055437364645e-14,
+  "observed_measurement_rmse": 0.005669039011518708,
+  "outage_filtered_rmse": 0.0005568394617121068,
+  "outage_smoothed_rmse": 0.0005616128361008014,
+  "max_smoothed_minus_filtered_variance": 0.0,
+  "ensemble": {
+    "seed": 20261025,
+    "trials": 256,
+    "samples_per_trial": 81,
+    "missing_per_trial": 21,
+    "filtered_mse": 1.031741789208065e-06,
+    "smoothed_mse": 8.58905741112774e-07,
+    "filtered_expected_mse": 9.78419389431597e-07,
+    "smoothed_expected_mse": 8.144805295546623e-07,
+    "filtered_mse_standard_error": 5.73112951863132e-08,
+    "smoothed_mse_standard_error": 4.821707656511249e-08,
+    "paired_improvement_standard_error": 3.350685924918207e-08,
+    "scope": "Independent prior draws and unclipped uniform dither; average linear-estimator risk, not Gaussian posterior coverage."
+  },
+  "scope": "Uniform subtractive dither; linear minimum-variance inference uses correct second moments, but Gaussian likelihood/posterior coverage is not exact. Fixed-state realization and separate prior-matched ensemble."
+}
