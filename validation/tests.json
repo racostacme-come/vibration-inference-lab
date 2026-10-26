@@ -1,0 +1,49 @@
+[
+  {
+    "module": "dampwatch",
+    "returncode": 0,
+    "seconds": 9.73499999998603,
+    "output": "...........................................................              [100%]\n59 passed in 9.02s\n"
+  },
+  {
+    "module": "gapsmooth",
+    "returncode": 0,
+    "seconds": 10.39000000001397,
+    "output": "..........................                                               [100%]\n26 passed in 9.81s\n"
+  },
+  {
+    "module": "aliasguard",
+    "returncode": 0,
+    "seconds": 4.35999999998603,
+    "output": "..........................................                               [100%]\n42 passed in 3.74s\n"
+  },
+  {
+    "module": "forcewindow",
+    "returncode": 0,
+    "seconds": 1.359000000054948,
+    "output": ".......................................                                  [100%]\n39 passed in 0.87s\n"
+  },
+  {
+    "module": "loadcoherent",
+    "returncode": 0,
+    "seconds": 2.640999999945052,
+    "output": "...........................................                              [100%]\n43 passed in 2.16s\n"
+  },
+  {
+    "module": "jointguard",
+    "returncode": 0,
+    "seconds": 1.812000000034459,
+    "output": "..................................                                       [100%]\n34 passed in 1.28s\n"
+  },
+  {
+    "module": "quantflex",
+    "returncode": 0,
+    "seconds": 0.765999999945052,
+    "output": ".........................................                                [100%]\n41 passed in 0.30s\n"
+  },
+  {
+    "module": "integration",
+    "returncode": 0,
+    "output": "..................                                                       [100%]\n18 passed in 3.31s\n"
+  }
+]

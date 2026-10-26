@@ -1,0 +1,12 @@
+[
+  {
+    "core.autocrlf": "false",
+    "commit": "d9178b5ab87e9aabe53b302722c6e82c20a38f9b",
+    "output": "Verified 209 imported files against the integration manifest."
+  },
+  {
+    "core.autocrlf": "true",
+    "commit": "d9178b5ab87e9aabe53b302722c6e82c20a38f9b",
+    "output": "Verified 209 imported files against the integration manifest."
+  }
+]

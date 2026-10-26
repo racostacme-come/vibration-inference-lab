@@ -1,0 +1,50 @@
+{
+  "date": "2026-10-25",
+  "checked_files": 209,
+  "method": "Read each pinned original Git blob with git show; compare its SHA-256 to both imported bytes and manifest. No mismatches.",
+  "intentional_import_changes": [],
+  "modules": [
+    {
+      "id": "dampwatch",
+      "source": "https://github.com/racostacme-come/dampwatch",
+      "commit": "679e3d3aa61556fac91451881025ca12d07ee543",
+      "files": 31
+    },
+    {
+      "id": "gapsmooth",
+      "source": "https://github.com/racostacme-come/gapsmooth",
+      "commit": "e886e7cd0888d50423b1d849d7260d648ffd5df2",
+      "files": 29
+    },
+    {
+      "id": "aliasguard",
+      "source": "https://github.com/racostacme-come/aliasguard",
+      "commit": "463a49502654372ce44921909516c7e48325efea",
+      "files": 33
+    },
+    {
+      "id": "forcewindow",
+      "source": "https://github.com/racostacme-come/forcewindow",
+      "commit": "2775fa4d30c86a323094f092d691f0baeb215fc0",
+      "files": 30
+    },
+    {
+      "id": "loadcoherent",
+      "source": "https://github.com/racostacme-come/loadcoherent",
+      "commit": "3b5d9a10f159b58899626f00319ac21827cc24e6",
+      "files": 29
+    },
+    {
+      "id": "jointguard",
+      "source": "https://github.com/racostacme-come/jointguard",
+      "commit": "e5c240a20f3abf324b8ed3742eb1db94c22d9fd0",
+      "files": 32
+    },
+    {
+      "id": "quantflex",
+      "source": "https://github.com/racostacme-come/quantflex",
+      "commit": "d7b59c0af1b6c86f1a6e2b0faed4672232433ebd",
+      "files": 25
+    }
+  ]
+}
