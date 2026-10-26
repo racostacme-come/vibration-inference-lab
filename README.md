@@ -63,7 +63,7 @@ CI runs all component Python tests and the integration test on Linux and Windows
 
 The fixed-state smoothed outage RMSE is **slightly worse** (0.000561613 m versus 0.000556839 m). This is a useful counterexample to a universal per-trajectory improvement assertion. In the matched ensemble, smoothing lowers measured MSE by about 16.8%; Monte Carlo standard errors and predicted error covariance are reported. Uniform dither supports linear second-moment estimation, not exact Gaussian posterior probabilities. No physical sensors or structures were validated.
 
-The continuous oscillator uses `x=[u,v]`, `M=m`, `C=2*m*zeta*omega`, `K=m*omega**2`; acceleration-noise intensity has units m²/s³. Dither is independent uniform noise on one quantization interval and is subtracted after rounding. Clipping invalidates the variance model `R=step**2/12`. Times are in seconds; a prior is defined before the observation at the first time; NaN marks a missing observation.
+The continuous oscillator uses `x=[u,v]`, `M=m`, `C=2*m*zeta*omega`, `K=m*omega**2`; acceleration-noise intensity has units mÂ²/sÂ³. Dither is independent uniform noise on one quantization interval and is subtracted after rounding. Clipping invalidates the variance model `R=step**2/12`. Times are in seconds; a prior is defined before the observation at the first time; NaN marks a missing observation.
 
 API entry points:
 
@@ -81,4 +81,4 @@ API entry points:
 
 The publication checks also regenerate both manuscript tables in temporary files and reject stale values without overwriting evidence. Run `python check_manuscript.py` to verify all nine required source/result/PDF hashes and the actual PDF page count. To inspect an independently compiled CI manuscript against this checkout, pass `--report path/to/build-report.json --pdf path/to/paper.pdf`. The manuscript job runs this check before and after compilation so rebuilding cannot hide a stale committed PDF. Eight mutation/acceptance tests exercise changed code, numerical results, PDF bytes, tables, missing hashes and incorrect page counts. Hashes establish consistency; numerical checks and visual review remain separate requirements.
 
-The validated code revision passes [Linux, Windows and manuscript CI](https://github.com/racostacme-come/vibration-inference-lab/actions/runs/40239408015). Downloaded evidence and visual-review status are recorded in [release evidence](docs/release-evidence.json). Published versions are listed under [releases](https://github.com/racostacme-come/vibration-inference-lab/releases).
+The validated code revision passes [Linux, Windows and manuscript CI](https://github.com/racostacme-come/vibration-inference-lab/actions/runs/40409714131). Downloaded evidence and visual-review status are recorded in [release evidence](docs/release-evidence.json). Published versions are listed under [releases](https://github.com/racostacme-come/vibration-inference-lab/releases).

@@ -2,7 +2,7 @@
 
 This release consolidates existing work; its historical development is not portrayed as seven new days of work.
 
-Future substantive extensions use a seven-day target, with a permitted 5–9-day window:
+Future substantive extensions use a seven-day target, with a permitted 5â€“9-day window:
 1. State research question, acceptance criteria and shared-model assumptions.
 2. Implement the first numerical improvement and independent oracle.
 3. Integrate the second component and test interface failure cases.
@@ -11,7 +11,7 @@ Future substantive extensions use a seven-day target, with a permitted 5–9-day
 6. Draft and compile the <=5-page paper, reproduce figures and inspect pages.
 7. Release after evidence review; document limitations and next questions.
 
-Days 8–9 are reserved for justified fixes. A missed acceptance criterion blocks a completed-release claim. Each day must record a meaningful contribution and push the corresponding branch. The series portfolio tracks the active cycle.
+Days 8â€“9 are reserved for justified fixes. A missed acceptance criterion blocks a completed-release claim. Each day must record a meaningful contribution and push the corresponding branch. The series portfolio tracks the active cycle.
 
 ## Consolidation recovery contribution, 25 October 2026
 
@@ -30,3 +30,5 @@ baseline. Local results: 302 Python tests, four C++17 CTests, 209 import hashes
 and all recorded metrics pass. The numerical paper is unchanged and its three
 pages were visually reviewed again. Final hosted evidence must pass before
 merging and publishing v0.1.0. No original component files were changed.
+
+Day-6 code CI 40409714131 passed all three jobs. Downloaded Linux/Windows metrics, all three artifact digests, portable checkouts and all six local/CI manuscript pages have been checked. Release may proceed after the evidence-only documentation commit is accepted; no numerical changes accompany that commit.

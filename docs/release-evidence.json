@@ -1,15 +1,15 @@
 {
-  "validated_code_commit": "d9178b5ab87e9aabe53b302722c6e82c20a38f9b",
-  "ci_run": 40239408015,
-  "ci_url": "https://github.com/racostacme-come/vibration-inference-lab/actions/runs/40239408015",
+  "validated_code_commit": "dfdc4257734816bb97a210b8f978c1d2901f0b27",
+  "ci_run": 40409714131,
+  "ci_url": "https://github.com/racostacme-come/vibration-inference-lab/actions/runs/40409714131",
   "jobs": {
     "ubuntu": "success",
     "windows": "success",
     "paper": "success"
   },
-  "python_tests_per_platform": 294,
+  "python_tests_per_platform": 302,
   "native_tests_per_platform": 4,
-  "artifact_numerics": "Both downloaded reports match local results at rtol=1e-6, atol=1e-11.",
+  "artifact_numerics": "Both downloaded final code reports confirm 302 tests, four native CTests and match local numerical results at rtol=1e-6, atol=1e-11.",
   "paper": {
     "local_pages": 3,
     "ci_pages": 3,
@@ -25,14 +25,80 @@
         "verification.py": "f2fa51bffd2ad4521d4dc3db3444cf4956006b92000891d937d5a5eaa65caf27",
         "results/independent.json": "069b3fb74d560d527de412763087b663d5eecc688b8fa5897539114add1cd887",
         "results/independent-table.tex": "88936dc5f1eca0eb2a20bf9a12a8e03a90794eb15f5087c393c0ea23a55725b4",
-        "paper/paper.pdf": "09d97eaca9a307ec345fd0fae6659cebfec15acceb1e8064a702767b01e4d6fe"
+        "paper/paper.pdf": "c60a498b1a8e689b57992e4f4aeb9dbd7aa87fb7d643c327014f17942c5e7a14"
       }
-    }
+    },
+    "review_date": "2026-10-26",
+    "note": "Unchanged scientific manuscript dated 25 October reports the 294-test baseline; eight publication tests were added on 26 October. All three local and three final CI pages visually reviewed."
   },
   "originals": "All 19 clean; 209 imported Git blobs match; no patches.",
   "portable_checkouts": [
     "core.autocrlf=false",
     "core.autocrlf=true"
   ],
-  "checked_utc": "2026-10-25T22:21:09.348351+00:00"
+  "checked_utc": "2026-10-26T22:09:13.221772+00:00",
+  "previous_validated_code_commit": "d9178b5ab87e9aabe53b302722c6e82c20a38f9b",
+  "portable_publication_checks": [
+    {
+      "core.autocrlf": "false",
+      "commit": "dfdc4257734816bb97a210b8f978c1d2901f0b27",
+      "checks": [
+        {
+          "command": [
+            "suite.py",
+            "verify"
+          ],
+          "output": "Verified 209 imported files against the integration manifest."
+        },
+        {
+          "command": [
+            "check_manuscript.py"
+          ],
+          "output": "Verified all nine manuscript hashes and 3 pages."
+        },
+        {
+          "command": [
+            "-m",
+            "pytest",
+            "tests/test_evidence.py",
+            "-q"
+          ],
+          "output": "........                                                                 [100%]\n8 passed in 1.33s"
+        }
+      ]
+    },
+    {
+      "core.autocrlf": "true",
+      "commit": "dfdc4257734816bb97a210b8f978c1d2901f0b27",
+      "checks": [
+        {
+          "command": [
+            "suite.py",
+            "verify"
+          ],
+          "output": "Verified 209 imported files against the integration manifest."
+        },
+        {
+          "command": [
+            "check_manuscript.py"
+          ],
+          "output": "Verified all nine manuscript hashes and 3 pages."
+        },
+        {
+          "command": [
+            "-m",
+            "pytest",
+            "tests/test_evidence.py",
+            "-q"
+          ],
+          "output": "........                                                                 [100%]\n8 passed in 1.14s"
+        }
+      ]
+    }
+  ],
+  "artifact_archive_sha256": {
+    "linux": "b0e6a4e9ec31bd2a3da45019e1abe1bd03370d20fdc36c2a35eff1f8f6a4dbc0",
+    "windows": "1ff8bd0b4c1925a4844bb8f6481f838522e4fd955cbb278a41dd408d71663391",
+    "manuscript": "23498f0d81b0f69c8439dc6bd09edffb8af48bbe7fc64974988f48a91d15b077"
+  }
 }
