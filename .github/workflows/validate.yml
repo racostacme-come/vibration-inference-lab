@@ -37,7 +37,9 @@ jobs:
           python-version: '3.12'
       - run: sudo apt-get update && sudo apt-get install -y texlive-latex-extra
       - run: python -m pip install pypdf
+      - run: python check_manuscript.py
       - run: python suite.py paper --engine /usr/bin/pdflatex
+      - run: python check_manuscript.py
       - uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a
         with:
           name: manuscript

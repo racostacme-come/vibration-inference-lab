@@ -1,5 +1,24 @@
 # Validation record: 25 October 2026
 
+## Publication-gate extension, 26 October 2026
+
+The day-6 contribution adds executable checks for all nine manuscript hashes,
+the actual PDF page count, and both tables regenerated from versioned numerical
+results. Eight acceptance/mutation tests reject altered code, results, PDF bytes,
+tables, missing manifest entries and incorrect page counts. No imported module
+or numerical experiment changed. CI checks the committed manuscript before
+recompiling, then checks the independently built manuscript again.
+
+Local execution passed **302 Python tests** (284 component and 18 root), all
+four MSVC C++17 CTests, all 209 imported hashes and reproduction of every recorded
+metric (rtol=1e-6, atol=1e-11). The local three-page PDF was rendered and all pages
+visually reviewed again. The paper dated 25 October describes its original
+294-test numerical baseline; the eight new publication checks supplement it.
+All 19 original component repositories remain clean. Final hosted acceptance
+for this contribution is recorded separately in `docs/release-evidence.json`.
+
+## Original numerical baseline
+
 Local Windows, Python 3.12.2, MSVC 19.44.35219.0. Dependency versions are recorded in `requirements-reproduced.txt`. This records execution, not a claim about future runs.
 
 - All 209 manifest entries match imported bytes and original pinned Git blobs. No imported modifications.

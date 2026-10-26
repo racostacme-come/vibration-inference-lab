@@ -20,3 +20,13 @@ The active recovery cycle began 21 October, targets 27 October, and permits just
 Next: publish this branch, verify Linux/Windows/manuscript CI and portable checkouts, inspect the independent PDF, then release only after all evidence passes. On any external failure, preserve this branch and repair the same suite. No new research begins before all three consolidation suites are accepted. The portfolio records the exact commits, hosted results and next cycle.
 
 Hosted run 40239408015 passed all three jobs. Downloaded results match local metrics; all six local/CI manuscript pages were reviewed. Portable clones pass all hashes. Final evidence documentation is ready; release only from the accepted tree. After this release, plan the next original Structural extension in the portfolio, retaining all component histories.
+
+## Day 6: executable manuscript acceptance, 26 October 2026
+
+Branch `feat/manuscript-evidence-gates` adds stale-table detection and a strict
+nine-file manuscript manifest/page-count verifier, including independent CI PDF
+inspection. Eight mutation/acceptance tests supplement the existing numerical
+baseline. Local results: 302 Python tests, four C++17 CTests, 209 import hashes
+and all recorded metrics pass. The numerical paper is unchanged and its three
+pages were visually reviewed again. Final hosted evidence must pass before
+merging and publishing v0.1.0. No original component files were changed.
